@@ -1,77 +1,124 @@
 library(qrandom)
 
-tic("one")
-qrandomunif(1)
-toc()
 #Set of functions to roll dice for DnD
-d20 <- function(n = 1, quantum = FALSE){
+d20 <- function(n = 1, quantum = FALSE) {
 
-  #Quantum number or regular sample
-  if(quantum){
+
+  if (quantum) {
     res <- round(qrandomunif(n, a = 1, b = 20), digits = 0)
-  }else{
+  } else{
     res <- sample(1:20, size = n, replace = TRUE)
   }
 
   #Checking for criticals
-  if(any(res == 20)){
+  if (any(res == 20)) {
     warning("!CRITICAL SUCCESS!")
   }
-  if(any(res == 1)){
+  if (any(res == 1)) {
     warning("!CRITICAL FAILURE!")
   }
 
   return(res)
 }
+use_r("d20")
 
-  d4 <- function(n = 1, summed = TRUE){
-    if(quantum){
-      res <- round(qrandomunif(n, a = 1, b = 4), digits = 0)
-    }else{
+
+coin <- function(n = 1,
+               summed = TRUE,
+               quantum = FALSE) {
+
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 2), digits = 0)
+  } else{
+    res <- sample(1:2, size = n, replace = TRUE)
+  }
+
+  #Converting to heads or tails
+  res <- ifelse(res == 1, "Heads", "Tails")
+
+  return(res)
+}
+
+d4 <- function(n = 1,
+               summed = TRUE,
+               quantum = FALSE) {
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 4), digits = 0)
+  } else{
     res <- sample(1:4, size = n, replace = TRUE)
-    }
+  }
 
-    if(n > 1 & summed == TRUE){
+  if (n > 1 & summed == TRUE) {
     res <- sum(res)
   }
   return(res)
 }
 
-d6 <- function(n = 1, summed = TRUE){
-  res <- sample(1:6, size = n, replace = TRUE)
-  if(n > 1 & summed == TRUE){
+d6 <- function(n = 1,
+               summed = TRUE,
+               quantum = FALSE) {
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 6), digits = 0)
+  } else{
+    res <- sample(1:6, size = n, replace = TRUE)
+  }
+  if (n > 1 & summed == TRUE) {
     res <- sum(res)
   }
   return(res)
 }
 
-d8 <- function(n = 1, summed = TRUE){
-  res <- sample(1:8, size = n, replace = TRUE)
-  if(n > 1 & summed == TRUE){
+d8 <- function(n = 1,
+               summed = TRUE,
+               quantum = FALSE) {
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 8), digits = 0)
+  } else{
+    res <- sample(1:8, size = n, replace = TRUE)
+  }
+  if (n > 1 & summed == TRUE) {
     res <- sum(res)
   }
   return(res)
 }
 
-d10 <- function(n = 1, summed = TRUE){
-  res <- sample(1:10, size = n, replace = TRUE)
-  if(n > 1 & summed == TRUE){
+d10 <- function(n = 1,
+                summed = TRUE,
+                quantum = FALSE) {
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 10), digits = 0)
+  } else{
+    res <- sample(1:10, size = n, replace = TRUE)
+  }
+  if (n > 1 & summed == TRUE) {
     res <- sum(res)
   }
   return(res)
 }
 
-d12 <- function(n = 1, summed = TRUE){
-  res <- sample(1:12, size = n, replace = TRUE)
-  if(n > 1 & summed == TRUE){
+d12 <- function(n = 1,
+                summed = TRUE,
+                quantum = FALSE) {
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 12), digits = 0)
+  } else{
+    res <- sample(1:12, size = n, replace = TRUE)
+  }
+  if (n > 1 & summed == TRUE) {
     res <- sum(res)
   }
   return(res)
 }
 
-d100 <- function(n = 1, summed = TRUE){
-  res <- sample(1:100, size = n, replace = TRUE)
-  if(n > 1 & summed == TRUE){
+d100 <- function(n = 1,
+                 summed = TRUE,
+                 quantum = FALSE) {
+  if (quantum) {
+    res <- round(qrandomunif(n, a = 1, b = 4), digits = 0)
+  } else{
+    res <- sample(1:100, size = n, replace = TRUE)
+  }
+  if (n > 1 & summed == TRUE) {
     res <- sum(res)
   }
   return(res)
@@ -90,7 +137,7 @@ d100 <- function(n = 1, summed = TRUE){
 #d20() + 4
 
 #Barbed Tongue with Sneak Attack
-btdSneak <- function(n = 1, sN = 3){
+btdSneak <- function(n = 1, sN = 3) {
   sample(1:8, size = n, replace = TRUE) + sample(1:6, size = n, replace = TRUE)
 }
 
@@ -98,7 +145,7 @@ btdSneak() + 7
 
 
 #Bladed Tongue
-btd <- function(n = 1){
+btd <- function(n = 1) {
   sample(1:8, size = n, replace = TRUE)
 }
 btd() + 6
