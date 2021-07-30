@@ -1,11 +1,12 @@
 Package: rDnD
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A dice roller built for fifth edition Dungeons and Dragons
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: André Bellvé
+Maintainer: André Bellvé <andre.m.bellve@gmail.com>
+Description: Forgotten your dice?  Tired of summing up a huge number of d6's for that sweet haymaker?  Don't let addition slow down your game! Want truly random rolls for DnD because your dodgy dice are rolling funny? Either roll from the standard random number generator built into R, or for the true random affeciando spend half a second and use the quantum function to sample a quantum field for your next dice roll! Fully extensible to create your own custom weapon rollers (see the ____ help).
+License: MIT + file LICENSE
+Imports: qrandom
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1
