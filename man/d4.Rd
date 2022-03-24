@@ -61,8 +61,8 @@ natural 20 is rolled, a warning will be thrown (e.g. "!CRITICAL
 SUCCESS!")
 }
 \description{
-A collection of virtual dice for DnD 5e. Rolls a dX die,
- where X = the number of sides.
+A collection of virtual dice for DnD 5e. Rolls n dX dice,
+ where X is the number of sides on each die and n is the number of dice to roll.
 }
 \details{
 Each function will roll n dice, sum the result as a

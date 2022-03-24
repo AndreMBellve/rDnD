@@ -4,6 +4,15 @@ coin <- function(n = 1,
                  quantum = FALSE,
                  die = FALSE) {
   if(quantum) {
+
+    #Checking for qrandom
+    if (!requireNamespace("qrandom", quietly = TRUE)) {
+      stop(
+        "Package \"qrandom\" must be installed to use this function.",
+        call. = FALSE
+      )
+    }
+
     res <- round(qrandom::qrandomunif(n, a = 1, b = 2), digits = 0)
   } else{
     res <- sample(1:2, size = n, replace = TRUE)
