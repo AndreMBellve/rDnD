@@ -21,6 +21,10 @@ coin <- function(n = 1,
   #Converting to heads or tails because qrandomunif won't sample a character vector
   if(!die){
     res <- ifelse(res == 1, "Heads", "Tails")
+  }else{
+    if (n > 1 & summed == TRUE) {
+      res <- sum(res)
+    }
   }
 
   return(res)
