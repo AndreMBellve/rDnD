@@ -1,5 +1,5 @@
 # rDnD
-A dice-roller for DnD 5e - quantum rolling extension for the chaos affecianado's
+A dice-roller for DnD 5e - quantum rolling extension for the chaos aficionado's
 
 Hello fellow adventurer! It seems you have found your way to my DnD dice roller R package. 
 In this bag of holding are several useful tools for rolling the standard DnD 5e dice. Why you might ask?
