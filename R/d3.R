@@ -13,7 +13,7 @@ d3 <- function(n = 1,
       )
     }
 
-    res <- round(qrandom::qrandomunif(n, a = 1, b = 3), digits = 0)
+    res <- round(qrandom::qrandomunif(n, a = 0.5, b = 3.5), digits = 0)
   } else{
     res <- sample(1:3, size = n, replace = TRUE)
   }

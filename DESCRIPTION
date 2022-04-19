@@ -1,6 +1,6 @@
 Package: rDnD
 Type: Package
-Title: A dice roller built for fifth edition Dungeons and Dragons
+Title: A Dice Roller Built For Fifth Edition Dungeons And Dragons
 Version: 0.1.0
 Author: André Bellvé
 Maintainer: André Bellvé <andre.m.bellve@gmail.com>
@@ -12,6 +12,7 @@ Description: Forgotten your dice?
     or for the true random affeciando spend half a second and use the quantum function to sample a quantum field for your next dice roll! Fully extensible to create your own custom weapon rollers (see help).
 License: MIT + file LICENSE
 Imports: qrandom
+Depends: R (>= 4.0.0)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

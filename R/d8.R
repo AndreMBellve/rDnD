@@ -12,7 +12,7 @@ d8 <- function(n = 1,
       )
     }
 
-    res <- round(qrandom::qrandomunif(n, a = 1, b = 8), digits = 0)
+    res <- round(qrandom::qrandomunif(n, a = 0.5, b = 8.5), digits = 0)
   } else{
     res <- sample(1:8, size = n, replace = TRUE)
   }

@@ -7,7 +7,7 @@
 #' @param summed T/F indicating whether or not the results should be
 #' summed or returned as individual die rolls.
 #' @param quantum T/F indicating whether or not the sampling should
-#' call ANU's quantum random number generator (see package qrandom)
+#' call ANU's quantum random number generator (see package qrandom: https://cran.r-project.org/web/packages/qrandom/index.html)
 #' @param die T/F exclusive to the coin function. If die = TRUE, the
 #' the function will 'roll' a 2-sided die
 #'
@@ -36,8 +36,8 @@
 #'
 #' In the case of the `d20()` function, the default is not to sum
 #' the output (i.e. default is `summed = FALSE`), as this die is
-#' usually used for ability checks, and it multiple are rolled it
-#' is because the check is with advantage/ disadvantage and
+#' usually used for ability checks, and if multiple are rolled it
+#' is usually because the check is with advantage/ disadvantage and
 #' individual rolls are desired. Moreover, if a natural 1 or a
 #' natural 20 is rolled, a warning will be thrown (e.g. "!CRITICAL
 #' SUCCESS!")
@@ -85,7 +85,7 @@ d4 <- function(n = 1,
       )
     }
 
-    res <- round(qrandom::qrandomunif(n, a = 1, b = 4),
+    res <- round(qrandom::qrandomunif(n, a = 0.5, b = 4.5),
                  digits = 0)
   } else{
     res <- sample(1:4, size = n, replace = TRUE)

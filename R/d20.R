@@ -11,7 +11,7 @@ d20 <- function(n = 1, summed = FALSE, quantum = FALSE) {
       )
     }
 
-    res <- round(qrandom::qrandomunif(n, a = 1, b = 20), digits = 0)
+    res <- round(qrandom::qrandomunif(n, a = 0.5, b = 20.5), digits = 0)
   } else{
     res <- sample(1:20, size = n, replace = TRUE)
   }

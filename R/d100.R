@@ -12,7 +12,7 @@ d100 <- function(n = 1,
       )
     }
 
-    res <- round(qrandom::qrandomunif(n, a = 1, b = 4), digits = 0)
+    res <- round(qrandom::qrandomunif(n, a = 0.5, b = 100.5), digits = 0)
   } else{
     res <- sample(1:100, size = n, replace = TRUE)
   }

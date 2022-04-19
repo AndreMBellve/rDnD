@@ -32,13 +32,13 @@ d6(n = 1, summed = TRUE, quantum = FALSE)
 d8(n = 1, summed = TRUE, quantum = FALSE)
 }
 \arguments{
-\item{n}{A integer specifying how many of dice to roll}
+\item{n}{An integer specifying how many of dice to roll}
 
 \item{summed}{T/F indicating whether or not the results should be
 summed or returned as individual die rolls.}
 
 \item{quantum}{T/F indicating whether or not the sampling should
-call ANU's quantum random number generator (see package qrandom)}
+call ANU's quantum random number generator (see package qrandom: https://cran.r-project.org/web/packages/qrandom/index.html)}
 
 \item{die}{T/F exclusive to the coin function. If die = TRUE, the
 the function will 'roll' a 2-sided die}
@@ -46,7 +46,9 @@ the function will 'roll' a 2-sided die}
 \value{
 Returns a vector of n integers or, if `summed = TRUE`, then a
 single integer which is the sum of all the rolls. The default is
-to roll a single die.
+to roll a single die. Note, if you add a modifier to a dice roll where summed = FALSE, it will add said modifier to each individual roll:
+
+e.g. `d8(2, summed = F) + 5`
 
 In the case of the function `coin()` - the default is to return a
 character vector with either "Heads" or "Tails" - this can be
@@ -54,8 +56,8 @@ reverted to integers using the `die = TRUE` argument.
 
 In the case of the `d20()` function, the default is not to sum
 the output (i.e. default is `summed = FALSE`), as this die is
-usually used for ability checks, and it multiple are rolled it
-is because the check is with advantage/ disadvantage and
+usually used for ability checks, and if multiple are rolled it
+is because the check is with advantage/disadvantage and
 individual rolls are desired. Moreover, if a natural 1 or a
 natural 20 is rolled, a warning will be thrown (e.g. "!CRITICAL
 SUCCESS!")
@@ -75,6 +77,7 @@ Each function will roll n dice, sum the result as a
  ability/weapon modifiers.  In addition, new functions can be
  easily defined to save your favourite skills / items - see
  examples.
+
 }
 \examples{
 coin() #A standard coin flip
@@ -93,6 +96,9 @@ d20() + 4 # 1d20 + 4 (e.g.+4 ability modifier)
 #Flame tongue rapier -
 #https://www.dndbeyond.com/magic-items/flame-tongue
 
+mod <- 3 # modifier
+prof <- 2 # proficieny
+
 ftr <- function(mod){ return(d8() + d6(2) + mod) }
 
 #Or if you wanted to bundle in an attack roll:
@@ -100,6 +106,8 @@ ftr <- function(mod, prof){
        cat(paste("Attack Roll:", (d20() + mod + prof), "\n"))
        cat(paste("Damage Roll:", (d8() + d6(2) + mod)))
      }
+
+ftr(mod, prof)
 
 #Where mod is your ability modifier for the attack, and prof is
 #your proficiency bonus. These can also be given defaults, but
