@@ -24,6 +24,7 @@ All the commonly used dice in DnD 5e are included in this package. d6 refers to 
 Executing the function `d6()` will roll a single six sided die, while  4d6 (or in rDnD syntax d6(4)) is four six-sided dice - the default is to `sum` these values for all dice except for the `d20()` and the `coin` function, although both can be set to do so. The joy of R is that these functions are all extensible! You have a sweet weapon that you always use and your modifiers are consistent? Just write yourself a quick wrapper to run it in a single line!
 
 E.g.
+`
 #Weapons can be coded like so:
 #Flame tongue rapier -
 #https://www.dndbeyond.com/magic-items/flame-tongue
@@ -44,7 +45,7 @@ ftr(mod, prof)
 #Where mod is your ability modifier for the attack, and prof is
 #your proficiency bonus. These can also be given defaults, but
 #don't forget to update as you level up adventurer!
-
+`
 The same extra process above can be done for your monsters too! Down the track I will include some functions I have written for monsters encountered in the 'Mines of Madness' one shot :)
 
 If you have the means, then please feel free to get back to me with any comments/issues you find with my package as it is still very much in development!
