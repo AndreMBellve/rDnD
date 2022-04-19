@@ -28,6 +28,9 @@ E.g.
 #Flame tongue rapier -
 #https://www.dndbeyond.com/magic-items/flame-tongue
 
+mod <- 3 # modifier
+prof <- 2 # proficieny
+
 ftr <- function(mod){ return(d8() + d6(2) + mod) }
 
 #Or if you wanted to bundle in an attack roll:
@@ -35,6 +38,8 @@ ftr <- function(mod, prof){
        cat(paste("Attack Roll:", (d20() + mod + prof), "\n"))
        cat(paste("Damage Roll:", (d8() + d6(2) + mod)))
      }
+
+ftr(mod, prof)
 
 #Where mod is your ability modifier for the attack, and prof is
 #your proficiency bonus. These can also be given defaults, but
